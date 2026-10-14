@@ -273,8 +273,8 @@ public static partial class ResumeContent
             Headline = "Full-stack developer. I ship the interface and the API, based in Tabriz",
             AboutEyebrow = "About me",
             AboutTitle = "Full-stack developer",
-            AboutLead = "I take a product from the screen, through the API, to the database.",
-            AboutBody = "My main work is full-stack development, on both the front end and the back end. I build interfaces with JavaScript and frameworks such as Angular, React, and Vue, and services with C# and ASP.NET Core, including Web API and MVC. I am also familiar with Python and Go. I design data in SQL Server, have worked with MongoDB, and use Docker for local development.",
+            AboutLead = "I build the web product a company can hand to a customer, from the requirement to a version that ships.",
+            AboutBody = "Bring me in when a project needs both the interface and the service behind it. I build the front end with JavaScript and Angular, React, or Vue, and the back end with C# and ASP.NET Core, including Web API. I design the data in SQL Server, and I put authentication, authorization, and validation in from the start. I am familiar with Python, Go, Docker, MongoDB, and web penetration testing at a working level, including the common issues in the OWASP Top 10. I can carry a feature, or a whole product, from the agreed scope through to delivery, alongside your team.",
             HeroImage = "img/hero/farhad.jpg",
             HeroThumb = "img/thumbs/47-60.jpg",
             AboutImage = "img/hero/farhad.jpg",
@@ -301,7 +301,7 @@ public static partial class ResumeContent
             Facts =
             [
                 new("Name", "Farhad Hosseinzadeh"),
-                new("Born", "1371/6/6"),
+                new("Born", "September 22, 1997"),
                 new("Email", "webspacesexplorer@outlook.com"),
                 new("Phone", "+98 936 278 0737"),
                 new("Address", "East Azerbaijan, Tabriz"),
@@ -310,7 +310,7 @@ public static partial class ResumeContent
             ],
             Education =
             [
-                new("Bachelor's degree, Software Engineering", "Payame Noor University", "1390 – 1393", "East Azerbaijan, Tabriz.")
+                new("Bachelor's degree, Software Engineering", "Payame Noor University", "1393 – 1396", "East Azerbaijan, Tabriz.")
             ],
             Experience =
             [
@@ -336,7 +336,8 @@ public static partial class ResumeContent
                 new("JavaScript", "0.75"),
                 new("SQL Server", "0.85"),
                 new("Python", "0.45"),
-                new("Go", "0.45")
+                new("Go", "0.45"),
+                new("Security", "0.45")
             ],
             Portfolio =
             [
@@ -357,7 +358,8 @@ public static partial class ResumeContent
                 new("Databases", "img/svg/web.svg", "SQL Server for design and queries, plus an introduction to MongoDB.", "img/service/3.jpg", ["SQL Server: comfortable with schema design and query writing.", "MongoDB: introductory NoSQL work."]),
                 new("Front end", "img/svg/user.svg", "Interfaces with JavaScript, Angular, React, and Vue.", "img/service/4.jpg", ["JavaScript and TypeScript.", "UI implementation with Angular, React, and Vue.", "Bootstrap, Tailwind, MUI, and Ant Design."]),
                 new("Architecture", "img/svg/briefcase.svg", "Microservices, service-oriented design, and local Docker.", "img/service/5.jpg", ["Familiar with microservices and service-oriented architecture.", "Docker for local development and testing.", "Postman, and Git with GitHub and GitLab."]),
-                new("Interface notes", "img/svg/writing_2.svg", "Figma, used to read a screen and pull out the UI requirements.", "img/service/6.jpg", ["Figma at the level of reviewing a file and extracting UI and UX requirements."])
+                new("Interface notes", "img/svg/writing_2.svg", "Figma, used to read a screen and pull out the UI requirements.", "img/service/6.jpg", ["Figma at the level of reviewing a file and extracting UI and UX requirements."]),
+                new("Application security", "img/svg/gear.svg", "Security built into the project, plus a working knowledge of web penetration testing.", "img/service/2.jpg", ["Authentication, authorization, and input validation on the API and the interface.", "Safer handling of secrets, configuration, HTTPS, and dependencies.", "Familiar with the OWASP Top 10 and with reviewing a web application for common weaknesses.", "Penetration testing at a general level: agree the scope, check the application, and write a clear finding report."])
             ],
             Testimonials = [],
             News = [],
