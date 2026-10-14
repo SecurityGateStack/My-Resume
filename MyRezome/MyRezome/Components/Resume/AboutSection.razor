@@ -1,0 +1,45 @@
+@using MyRezome.Models
+
+<div id="about" class="iknow_tm_main_section">
+    <div class="iknow_tm_about">
+        <div class="left">
+            <div class="left_inner">
+                <div class="image">
+                    <img src="@Profile.AboutThumb" alt="" />
+                    <div class="main" data-img-url="@Profile.AboutImage"></div>
+                </div>
+                <div class="details">
+                    <ul>
+                        @foreach (var fact in Profile.Facts)
+                        {
+                            <li>
+                                <h3>@fact.Label</h3>
+                                <span class="@(SiteCulture.KeepLtr(fact.Value) ? "keep-ltr" : null)">@fact.Value</span>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="iknow_tm_main_title">
+                <span>@Profile.AboutEyebrow</span>
+                <h3>@Profile.AboutTitle</h3>
+            </div>
+            <div class="bigger_text">
+                <p>@Profile.AboutLead</p>
+            </div>
+            <div class="text">
+                <p>@Profile.AboutBody</p>
+            </div>
+            <div class="iknow_tm_button">
+                <a href="@($"/resume/{Profile.Culture}/cv.pdf")" download data-enhance-nav="false">@Profile.Labels.DownloadCv</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public ResumeProfile Profile { get; set; } = default!;
+}

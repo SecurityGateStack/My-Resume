@@ -1,0 +1,45 @@
+@using MyRezome.Models
+
+<div id="news" class="iknow_tm_main_section">
+    <div class="iknow_tm_news">
+        <div class="iknow_tm_main_title">
+            <span>@Profile.Labels.BlogEyebrow</span>
+            <h3>@Profile.Labels.BlogTitle</h3>
+        </div>
+        <div class="news_list">
+            <ul>
+                @foreach (var post in Profile.News)
+                {
+                    <li>
+                        <div class="list_inner">
+                            <div class="image">
+                                <img src="img/thumbs/37-27.jpg" alt="" />
+                                <div class="main" data-img-url="@post.Image"></div>
+                                <a class="iknow_tm_full_link" data-enhance-nav="false" href="#"></a>
+                            </div>
+                            <div class="details">
+                                <span class="category"><a href="#" data-enhance-nav="false">@post.Category</a></span>
+                                <h3 class="title"><a href="#" data-enhance-nav="false">@post.Title</a></h3>
+                            </div>
+                            <div class="hidden_content">
+                                <div class="news_informations">
+                                    <div class="text">
+                                        @foreach (var paragraph in post.Paragraphs)
+                                        {
+                                            <p>@paragraph</p>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public ResumeProfile Profile { get; set; } = default!;
+}

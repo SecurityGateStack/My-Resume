@@ -1,0 +1,750 @@
+.plain-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #f6f4fb;
+    color: #1c1c1c;
+    font-family: "Poppins", sans-serif;
+}
+
+.plain-page .panel {
+    max-width: 34rem;
+    background: #fff;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 18px 18px 48px rgba(108, 99, 255, .12);
+}
+
+.plain-page h1,
+.plain-page h2 {
+    margin: 0 0 .75rem;
+    color: #141414;
+}
+
+.plain-page a {
+    color: var(--resume-accent, #ff451b);
+}
+
+#blazor-error-ui {
+    background: var(--resume-accent, #ff451b);
+    color: #fff;
+    bottom: 0;
+    box-sizing: border-box;
+    display: none;
+    left: 0;
+    padding: .7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: .75rem;
+    top: .45rem;
+}
+
+.site_controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.cv_download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 16px;
+    border-radius: 999px;
+    background: var(--resume-accent, #ff451b);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 10px 28px rgba(20, 16, 40, .14);
+}
+
+.cv_download svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.control_group {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .94);
+    border: 1px solid rgba(20, 16, 40, .08);
+    box-shadow: 0 10px 28px rgba(20, 16, 40, .08);
+}
+
+.control_icon {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #3d3a45;
+    flex: 0 0 auto;
+}
+
+.control_icon svg,
+.theme_switch button svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.lang_switch a,
+.theme_switch button {
+    min-width: 34px;
+    height: 34px;
+    padding: 0 8px;
+    border: 0;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #2b2833;
+    background: transparent;
+    box-shadow: none;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.theme_switch button {
+    width: 34px;
+    padding: 0;
+}
+
+.lang_switch a.active,
+.theme_switch button.active {
+    background: var(--resume-accent, #ff451b);
+    color: #fff;
+}
+
+.accent_well {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    margin-inline: 3px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(20, 16, 40, .12);
+    flex: 0 0 auto;
+    background: var(--resume-accent, #ff451b);
+}
+
+.accent_switch input[type="color"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.iknow_tm_topbar .logo .logo_on_dark {
+    display: none;
+}
+
+body.dark {
+    color-scheme: dark;
+}
+
+body.dark .iknow_tm_topbar .logo .logo_on_light {
+    display: none;
+}
+
+body.dark .iknow_tm_topbar .logo .logo_on_dark {
+    display: inline-block;
+}
+
+body.dark .control_group {
+    background: rgba(255, 255, 255, .08);
+    border-color: rgba(255, 255, 255, .14);
+    box-shadow: none;
+}
+
+body.dark .control_icon,
+body.dark .lang_switch a,
+body.dark .theme_switch button {
+    color: #f4f5f7;
+    background: transparent;
+    box-shadow: none;
+}
+
+body.dark .lang_switch a.active,
+body.dark .theme_switch button.active {
+    background: var(--resume-accent, #ff451b);
+    color: #fff;
+}
+
+body.dark .accent_well {
+    border-color: rgba(255, 255, 255, .28);
+}
+
+body.dark .plain-page {
+    background: #1d1b1b;
+    color: #a7afbd;
+}
+
+body.dark .plain-page .panel {
+    background: #494b50;
+    box-shadow: none;
+}
+
+body.dark .plain-page h1,
+body.dark .plain-page h2 {
+    color: #fff;
+}
+
+.keep-ltr {
+    direction: ltr;
+    unicode-bidi: isolate;
+    display: inline-block;
+}
+
+.iknow_tm_about .left,
+.iknow_tm_about .right {
+    min-width: 0;
+}
+
+.iknow_tm_about .left .left_inner {
+    display: grid;
+    min-width: 0;
+}
+
+.iknow_tm_about .left .image,
+.iknow_tm_about .left .details {
+    grid-area: 1 / 1;
+    min-width: 0;
+}
+
+.iknow_tm_about .left .image {
+    width: 78%;
+    max-width: 78%;
+    justify-self: start;
+}
+
+.iknow_tm_about .left .details {
+    position: relative;
+    top: 36px;
+    left: auto;
+    right: auto;
+    width: min(340px, 86%);
+    max-width: 86%;
+    margin: 0 0 36px;
+    justify-self: end;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.iknow_tm_about .left .details ul li {
+    min-width: 0;
+}
+
+.iknow_tm_about .left .details h3,
+.iknow_tm_about .left .details span,
+.iknow_tm_about .left .details .keep-ltr {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.iknow_tm_about .left .details span,
+.iknow_tm_about .left .details .keep-ltr {
+    display: block;
+    line-height: 1.45;
+}
+
+html[dir="rtl"] .iknow_tm_about .left .details .keep-ltr {
+    text-align: right;
+}
+
+html[lang="fa"] body,
+html[lang="fa"] .iknow_tm_hero .name,
+html[lang="fa"] .iknow_tm_main_title h3,
+html[lang="fa"] .iknow_tm_button a,
+html[lang="fa"] .progress_inner span.number,
+html[lang="fa"] .lang_switch a {
+    font-family: "Vazirmatn", "Poppins", sans-serif;
+}
+
+html[lang="fa"] .iknow_tm_hero .name {
+    font-size: clamp(32px, 4.6vw, 68px);
+}
+
+.iknow_tm_hero .name {
+    font-size: clamp(32px, 4.2vw, 64px);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+.iknow_tm_hero .text,
+.iknow_tm_main_title h3 {
+    overflow-wrap: anywhere;
+}
+
+.iknow_tm_resume .info_list ul li .short .job h3,
+.iknow_tm_resume .info_list ul li .short .job span {
+    overflow-wrap: break-word;
+}
+
+.iknow_tm_hero .content_inner .main_info,
+.iknow_tm_hero .left,
+.iknow_tm_hero .right,
+.iknow_tm_resume .left,
+.iknow_tm_resume .right,
+.iknow_tm_contact .wrapper .left,
+.iknow_tm_contact .wrapper .right {
+    min-width: 0;
+}
+
+.iknow_tm_hero .right {
+    padding-left: clamp(16px, 5vw, 120px);
+    align-self: flex-start;
+    margin-top: 56px;
+}
+
+.iknow_tm_topbar .topbar_inner {
+    gap: 12px 16px;
+    flex-wrap: wrap;
+}
+
+.iknow_tm_topbar .logo {
+    flex: 0 0 auto;
+}
+
+.iknow_tm_topbar .right {
+    position: static;
+    z-index: 2;
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.iknow_tm_topbar .right .social {
+    top: 0;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.iknow_tm_topbar .right .social ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 8px 12px;
+    list-style: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .94);
+    border: 1px solid rgba(20, 16, 40, .08);
+    box-shadow: 0 10px 28px rgba(20, 16, 40, .08);
+}
+
+.iknow_tm_topbar .right .social ul li {
+    margin: 0;
+}
+
+body.dark .iknow_tm_topbar .right .social ul {
+    background: rgba(255, 255, 255, .08);
+    border-color: rgba(255, 255, 255, .14);
+    box-shadow: none;
+}
+
+html[dir="rtl"] .iknow_tm_resume_title h3 {
+    padding-left: 0;
+    padding-right: 40px;
+}
+
+html[dir="rtl"] .iknow_tm_resume_title .shape {
+    left: auto;
+    right: 0;
+}
+
+.iknow_tm_resume .info_list,
+.iknow_tm_resume .info_list ul,
+.iknow_tm_resume .info_list ul li,
+.iknow_tm_resume .info_list ul li .list_inner,
+.iknow_tm_resume .info_list ul li .short,
+.iknow_tm_resume .info_list ul li .text {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.iknow_tm_resume .info_list ul li .short {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.iknow_tm_resume .info_list ul li .short .job {
+    width: 100%;
+    min-width: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 1041px) {
+    .iknow_tm_resume .left {
+        padding-right: 36px;
+    }
+
+    .iknow_tm_resume .right {
+        padding-left: 36px;
+    }
+
+    html[dir="rtl"] .iknow_tm_resume .left {
+        padding-right: 0;
+        padding-left: 40px;
+    }
+
+    html[dir="rtl"] .iknow_tm_resume .right {
+        padding-left: 0;
+        padding-right: 40px;
+    }
+}
+
+.iknow_tm_resume .info_list ul li .short .year {
+    max-width: 100%;
+}
+
+.iknow_tm_resume .info_list ul li .short .year span {
+    white-space: normal;
+    line-height: 1.45;
+    text-align: center;
+    padding: 6px 14px;
+}
+
+.circular_progress_bar ul {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.circular_progress_bar ul li {
+    float: none;
+    box-sizing: border-box;
+    width: 50%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.iknow_tm_contact .wrapper .left ul li .list_inner,
+.iknow_tm_contact .wrapper .left .short {
+    min-width: 0;
+}
+
+.iknow_tm_contact .wrapper .left .short span,
+.iknow_tm_contact .wrapper .left .short a {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.iknow_tm_modalbox .box_inner {
+    width: min(850px, calc(100vw - 32px));
+    max-width: calc(100vw - 32px);
+}
+
+.plain-page .panel {
+    width: min(34rem, 100%);
+    box-sizing: border-box;
+}
+
+html[dir="rtl"] .iknow_tm_hero .background_shape {
+    left: auto;
+    right: 0;
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .iknow_tm_hero .right {
+    padding-left: 72px;
+    padding-right: clamp(16px, 5vw, 120px);
+}
+
+html[dir="rtl"] .iknow_tm_hero .main_menu ul li {
+    float: right;
+    margin: 0 0 6px 6px;
+}
+
+html[dir="rtl"] .iknow_tm_hero .main_menu ul li span {
+    left: auto;
+    right: 100%;
+    padding-left: 0;
+    padding-right: 12px;
+}
+
+html[dir="rtl"] .iknow_tm_hero .main_menu ul li.entered span,
+html[dir="rtl"] .iknow_tm_hero .main_menu ul li.active span {
+    left: auto;
+    right: 95px;
+}
+
+html[dir="rtl"] .iknow_tm_video .play {
+    padding-left: 0;
+    padding-right: 28px;
+}
+
+html[dir="rtl"] .iknow_tm_topbar .right .social ul li,
+html[dir="rtl"] .iknow_tm_topbar .right .social ul li:last-child {
+    margin: 0;
+}
+
+html[dir="rtl"] .iknow_tm_topbar .iknow_tm_button {
+    margin-left: 0;
+    margin-right: 22px;
+}
+
+html[dir="rtl"] .iknow_tm_about .left .details {
+    left: auto;
+    right: auto;
+}
+
+html[dir="rtl"] .iknow_tm_about .right {
+    padding-left: 0;
+    padding-right: 75px;
+}
+
+html[dir="rtl"] .iknow_tm_resume .left,
+html[dir="rtl"] .iknow_tm_contact .wrapper .left {
+    padding-right: 0;
+    padding-left: 30px;
+}
+
+html[dir="rtl"] .progress_inner > span,
+html[dir="rtl"] .iknow_tm_contact .empty_notice,
+html[dir="rtl"] .iknow_tm_contact .contact_error,
+html[dir="rtl"] .iknow_tm_contact .returnmessage,
+html[dir="rtl"] .iknow_tm_portfolio .portfolio_filter {
+    text-align: right;
+}
+
+@media (max-width: 1400px) {
+    html[dir="rtl"] .iknow_tm_hero .main_menu ul li.entered span,
+    html[dir="rtl"] .iknow_tm_hero .main_menu ul li.active span {
+        right: 60px;
+    }
+
+    html[dir="rtl"] .iknow_tm_video .play {
+        padding-right: 20px;
+    }
+
+    html[dir="rtl"] .iknow_tm_topbar .iknow_tm_button {
+        margin-right: 16px;
+    }
+}
+
+@media (max-width: 1040px) {
+    html[dir="rtl"] .iknow_tm_hero .right,
+    html[dir="rtl"] .iknow_tm_resume .left,
+    html[dir="rtl"] .iknow_tm_contact .wrapper .left {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .iknow_tm_about .left .image {
+        width: 100%;
+        max-width: none;
+    }
+
+    .iknow_tm_about .left .left_inner {
+        display: block;
+    }
+
+    .iknow_tm_about .left .image,
+    .iknow_tm_about .left .details {
+        width: 100%;
+        max-width: none;
+        justify-self: stretch;
+    }
+
+    .iknow_tm_about .left .details {
+        position: relative;
+        top: auto;
+        margin-bottom: 0;
+    }
+
+    html[dir="rtl"] .iknow_tm_about .right {
+        padding-right: 0;
+    }
+
+    .iknow_tm_hero .right {
+        align-self: auto;
+        margin-top: 20px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .iknow_tm_hero .right .image {
+        max-height: 340px;
+        overflow: hidden;
+        border-radius: 16px;
+    }
+
+    .iknow_tm_hero .right .image img {
+        max-height: 340px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .iknow_tm_hero .main_menu {
+        box-sizing: border-box;
+    }
+
+    .iknow_tm_hero .main_menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .iknow_tm_hero .main_menu ul li {
+        float: none;
+        margin: 0 !important;
+    }
+
+    .iknow_tm_hero .main_menu ul li span {
+        white-space: normal;
+        max-width: calc(100% - 84px);
+    }
+
+    html[dir="rtl"] .iknow_tm_hero .main_menu ul li span,
+    html[dir="rtl"] .iknow_tm_hero .main_menu ul li.entered span,
+    html[dir="rtl"] .iknow_tm_hero .main_menu ul li.active span {
+        left: 12px !important;
+        right: 72px !important;
+        text-align: right;
+    }
+
+    .iknow_tm_mainpart.opened {
+        padding: 36px 20px;
+    }
+
+    .iknow_tm_portfolio .portfolio_filter ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 18px;
+    }
+
+    .iknow_tm_portfolio .portfolio_filter ul li {
+        margin: 0;
+    }
+}
+
+@media (max-width: 1040px) {
+    .iknow_tm_topbar .right .social {
+        display: flex;
+    }
+}
+
+@media (max-width: 640px) {
+    .iknow_tm_topbar .right {
+        flex-basis: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        min-width: 0;
+        row-gap: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .iknow_tm_topbar .topbar_inner {
+        align-items: center;
+        padding-top: 16px;
+        padding-bottom: 6px;
+    }
+
+    .control_icon,
+    .lang_switch a,
+    .theme_switch button {
+        width: 32px;
+        min-width: 32px;
+        height: 32px;
+    }
+
+    .lang_switch a {
+        width: auto;
+        padding: 0 7px;
+        font-size: 11px;
+    }
+
+    .circular_progress_bar ul {
+        margin: 0;
+    }
+
+    .circular_progress_bar ul li {
+        box-sizing: border-box;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .iknow_tm_resume .info_list ul li .short {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .iknow_tm_resume .info_list ul li .short .job {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .iknow_tm_modalbox .box_inner {
+        width: min(500px, calc(100vw - 24px));
+    }
+
+    .plain-page {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .iknow_tm_mainpart.opened {
+        padding: 24px 12px 32px;
+    }
+
+    .circular_progress_bar ul li {
+        width: 100%;
+    }
+
+    .iknow_tm_modalbox .box_inner {
+        width: calc(100vw - 20px);
+    }
+
+    .iknow_tm_about .left .details {
+        padding: 22px 18px;
+    }
+}

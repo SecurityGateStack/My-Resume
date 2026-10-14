@@ -1,0 +1,64 @@
+@using MyRezome.Models
+
+<div id="contact" class="iknow_tm_main_section">
+    <div class="iknow_tm_contact">
+        <div class="iknow_tm_main_title">
+            <span>@Profile.Labels.ContactEyebrow</span>
+            <h3>@Profile.Labels.ContactTitle</h3>
+        </div>
+        <div class="wrapper">
+            <div class="left">
+                <ul>
+                    @foreach (var channel in Profile.Channels)
+                    {
+                        <li>
+                            <div class="list_inner">
+                                <span class="icon"><img class="svg" src="@channel.Icon" alt="" /></span>
+                                <div class="short">
+                                    <h3>@channel.Title</h3>
+                                    <span>
+                                        @if (channel.Url is null)
+                                        {
+                                            <span class="@(SiteCulture.KeepLtr(channel.Value) ? "keep-ltr" : null)">@channel.Value</span>
+                                        }
+                                        else
+                                        {
+                                            <a class="@(SiteCulture.KeepLtr(channel.Value) ? "keep-ltr" : null)" href="@channel.Url">@channel.Value</a>
+                                        }
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="right">
+                <div class="fields">
+                    <form action="/" method="post" class="contact_form" id="contact_form" autocomplete="off">
+                        <div class="returnmessage" data-success="@Profile.Labels.SuccessMessage"></div>
+                        <div class="empty_notice"><span>@Profile.Labels.EmptyNotice</span></div>
+                        <div class="input_list">
+                            <ul>
+                                <li><input id="name" type="text" placeholder="@Profile.Labels.NamePlaceholder" /></li>
+                                <li><input id="email" type="text" placeholder="@Profile.Labels.EmailPlaceholder" /></li>
+                                <li><input id="phone" type="text" placeholder="@Profile.Labels.PhonePlaceholder" /></li>
+                                <li><input id="subject" type="text" placeholder="@Profile.Labels.SubjectPlaceholder" /></li>
+                            </ul>
+                        </div>
+                        <div class="message_area">
+                            <textarea id="message" placeholder="@Profile.Labels.MessagePlaceholder"></textarea>
+                        </div>
+                        <div class="iknow_tm_button">
+                            <a id="send_message" href="#" data-enhance-nav="false">@Profile.Labels.Submit</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public ResumeProfile Profile { get; set; } = default!;
+}

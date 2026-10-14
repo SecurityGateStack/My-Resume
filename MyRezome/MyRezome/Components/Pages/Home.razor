@@ -1,0 +1,22 @@
+﻿@page "/"
+@page "/en"
+@page "/de"
+@page "/fa"
+
+<PageTitle>@Profile.Name | @Profile.Labels.ResumeEyebrow</PageTitle>
+
+<HeadContent>
+    <meta name="description" content="@Profile.Headline" />
+    <meta name="author" content="@Profile.Name" />
+</HeadContent>
+
+<CascadingValue Value="Profile" IsFixed="true">
+    <ResumeView />
+</CascadingValue>
+
+@code {
+    [CascadingParameter]
+    private HttpContext? HttpContext { get; set; }
+
+    private ResumeProfile Profile => ResumeContent.Get(SiteCulture.FromPath(HttpContext?.Request.Path.Value));
+}

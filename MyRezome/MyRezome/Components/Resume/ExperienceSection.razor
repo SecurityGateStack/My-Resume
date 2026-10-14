@@ -1,0 +1,113 @@
+@using MyRezome.Models
+
+<div id="resume" class="iknow_tm_main_section">
+    <div class="iknow_tm_resume">
+        <div class="iknow_tm_main_title">
+            <span>@Profile.Labels.ResumeEyebrow</span>
+            <h3>@Profile.Labels.ResumeTitle</h3>
+        </div>
+        <div class="resume_inner">
+            <div class="left">
+                <div class="info_list">
+                    <div class="iknow_tm_resume_title">
+                        <h3>@Profile.Labels.EducationTitle</h3>
+                        <span class="shape"></span>
+                    </div>
+                    <ul>
+                        @foreach (var item in Profile.Education)
+                        {
+                            <li>
+                                <div class="list_inner">
+                                    <div class="short">
+                                        <div class="job">
+                                            <h3>@item.Title</h3>
+                                            <span>@item.Place</span>
+                                        </div>
+                                        <div class="year">
+                                            <span>@item.Period</span>
+                                        </div>
+                                    </div>
+                                    <div class="text">
+                                        <p>@item.Summary</p>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="info_list">
+                    <div class="iknow_tm_resume_title">
+                        <h3>@Profile.Labels.ExperienceTitle</h3>
+                        <span class="shape"></span>
+                    </div>
+                    <ul>
+                        @foreach (var item in Profile.Experience)
+                        {
+                            <li>
+                                <div class="list_inner">
+                                    <div class="short">
+                                        <div class="job">
+                                            <h3>@item.Title</h3>
+                                            <span>@item.Place</span>
+                                        </div>
+                                        <div class="year">
+                                            <span>@item.Period</span>
+                                        </div>
+                                    </div>
+                                    <div class="text">
+                                        <p>@item.Summary</p>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <div class="skills_list">
+                    <div class="iknow_tm_resume_title">
+                        <h3>@Profile.Labels.PersonalSkillsTitle</h3>
+                        <span class="shape"></span>
+                    </div>
+                    <div class="personal">
+                        <div class="dodo_progress">
+                            @foreach (var skill in Profile.PersonalSkills)
+                            {
+                                <div class="progress_inner" data-value="@skill.Percent">
+                                    <span><span class="label">@skill.Name</span><span class="number">@skill.Percent%</span></span>
+                                    <div class="background"><div class="bar"><div class="bar_in"></div></div></div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_list">
+                    <div class="iknow_tm_resume_title">
+                        <h3>@Profile.Labels.SoftwareSkillsTitle</h3>
+                        <span class="shape"></span>
+                    </div>
+                    <div class="software">
+                        <div class="circular_progress_bar">
+                            <ul>
+                                @foreach (var skill in Profile.SoftwareSkills)
+                                {
+                                    <li>
+                                        <div class="list_inner">
+                                            <div class="myCircle" data-value="@skill.Value"></div>
+                                            <div class="title"><h3>@skill.Name</h3></div>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public ResumeProfile Profile { get; set; } = default!;
+}

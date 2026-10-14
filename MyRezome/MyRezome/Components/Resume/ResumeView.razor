@@ -1,0 +1,43 @@
+<div id="preloader">
+    <div class="loader_line"></div>
+</div>
+
+<div class="iknow_tm_all_wrap" data-magic-cursor="show">
+    <div class="iknow_tm_modalbox">
+        <div class="box_inner">
+            <div class="close">
+                <a href="#" data-enhance-nav="false"><img class="svg" src="img/svg/cancel.svg" alt="" /></a>
+            </div>
+            <div class="description_wrap"></div>
+        </div>
+    </div>
+
+    <TopBar />
+    <HeroSection />
+
+    <div class="container">
+        <div class="iknow_tm_mainpart">
+            <AboutSection />
+            <ExperienceSection />
+            <PortfolioSection />
+            <ServicesSection />
+            @if (Profile.Testimonials.Count > 0)
+            {
+                <TestimonialsSection />
+            }
+            @if (Profile.News.Count > 0)
+            {
+                <NewsSection />
+            }
+            <ContactSection />
+        </div>
+    </div>
+
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public ResumeProfile Profile { get; set; } = default!;
+}

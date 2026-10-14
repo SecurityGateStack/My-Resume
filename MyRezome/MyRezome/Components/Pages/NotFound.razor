@@ -1,0 +1,40 @@
+﻿@page "/not-found"
+@layout MainLayout
+
+<div class="plain-page">
+    <div class="panel">
+        <h1>@Heading</h1>
+        <p>@Message</p>
+        <p><a href="@HomePath" data-enhance-nav="false">@HomeLabel</a></p>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    private HttpContext? HttpContext { get; set; }
+
+    private string Culture => SiteCulture.Normalize(HttpContext?.Request.Cookies[SiteCulture.CookieName]);
+
+    private string Heading => Culture switch
+    {
+        "de" => "Seite nicht gefunden",
+        "fa" => "صفحه پیدا نشد",
+        _ => "Page not found"
+    };
+
+    private string Message => Culture switch
+    {
+        "de" => "Diese Adresse gehört nicht zum Lebenslauf.",
+        "fa" => "این نشانی بخشی از رزومه نیست.",
+        _ => "That address is not part of this resume."
+    };
+
+    private string HomeLabel => Culture switch
+    {
+        "de" => "Zur Startseite",
+        "fa" => "بازگشت به خانه",
+        _ => "Back to home"
+    };
+
+    private string HomePath => SiteCulture.Options.First(option => option.Code == Culture).Path;
+}

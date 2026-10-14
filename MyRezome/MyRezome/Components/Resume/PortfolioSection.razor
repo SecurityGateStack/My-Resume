@@ -1,0 +1,108 @@
+@using MyRezome.Models
+
+<div id="portfolio" class="iknow_tm_main_section">
+    <div class="iknow_tm_portfolio">
+        <div class="iknow_tm_main_title">
+            <span>@Profile.Labels.PortfolioEyebrow</span>
+            <h3>@Profile.Labels.PortfolioTitle</h3>
+        </div>
+        <div class="portfolio_filter">
+            <ul>
+                <li><a href="#" class="current" data-enhance-nav="false" data-filter="*">@Profile.Labels.FilterAll</a></li>
+                <li><a href="#" data-enhance-nav="false" data-filter=".health">@Profile.Labels.FilterVimeo</a></li>
+                <li><a href="#" data-enhance-nav="false" data-filter=".fleet">@Profile.Labels.FilterYoutube</a></li>
+                <li><a href="#" data-enhance-nav="false" data-filter=".web">@Profile.Labels.FilterSoundcloud</a></li>
+            </ul>
+        </div>
+        <div class="portfolio_list">
+            <ul class="gallery_zoom">
+                @foreach (var item in Profile.Portfolio)
+                {
+                    <li class="@item.Filter">
+                        <div class="list_inner">
+                            <div class="image">
+                                <img src="img/thumbs/1-1.jpg" alt="" />
+                                <div class="main" data-img-url="@item.Image"></div>
+                            </div>
+                            <div class="overlay"></div>
+                            <img class="svg" src="@item.Icon" alt="" />
+                            <div class="details">
+                                <span>@item.Category</span>
+                                <h3>@item.Title</h3>
+                            </div>
+                            <a class="iknow_tm_full_link @item.LinkClass" data-enhance-nav="false" href="@item.Url"></a>
+
+                            @if (item.Detail is not null)
+                            {
+                                <div class="hidden_content">
+                                    <div class="popup_details">
+                                        <div class="main_details">
+                                            <div class="textbox">
+                                                @foreach (var paragraph in item.Detail.Paragraphs)
+                                                {
+                                                    <p>@paragraph</p>
+                                                }
+                                            </div>
+                                            <div class="detailbox">
+                                                <ul>
+                                                    <li>
+                                                        <span class="first">@Profile.Labels.Client</span>
+                                                        <span>@item.Detail.Client</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="first">@Profile.Labels.Category</span>
+                                                        <span><a href="#">@item.Detail.Category</a></span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="first">@Profile.Labels.Date</span>
+                                                        <span>@item.Detail.Date</span>
+                                                    </li>
+                                                    @if (!string.IsNullOrWhiteSpace(item.Detail.Website))
+                                                    {
+                                                        <li>
+                                                            <span class="first">@Profile.Labels.Website</span>
+                                                            <span><a class="keep-ltr" href="@item.Detail.Website" target="_blank" rel="noopener noreferrer">@item.Detail.Website</a></span>
+                                                        </li>
+                                                    }
+                                                    <li>
+                                                        <span class="first">@Profile.Labels.Share</span>
+                                                        <ul class="share">
+                                                            @foreach (var social in Profile.SocialLinks.Take(3))
+                                                            {
+                                                                <li><a href="@social.Url" target="_blank" rel="noopener noreferrer"><img class="svg" src="@social.Icon" alt="@social.Label" /></a></li>
+                                                            }
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="additional_images">
+                                            <ul>
+                                                @foreach (var image in item.Detail.Gallery)
+                                                {
+                                                    <li>
+                                                        <div class="list_inner">
+                                                            <div class="my_image">
+                                                                <img src="img/thumbs/4-2.jpg" alt="" />
+                                                                <div class="main" data-img-url="@image"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public ResumeProfile Profile { get; set; } = default!;
+}

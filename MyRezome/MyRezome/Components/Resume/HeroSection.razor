@@ -1,0 +1,58 @@
+@using MyRezome.Models
+
+<div class="iknow_tm_hero">
+    <div class="background_shape"></div>
+    <div class="hero_content">
+        <div class="container">
+            <div class="content_inner">
+                <div class="main_info">
+                    <div class="left">
+                        <span class="subtitle">@Profile.Greeting</span>
+                        <h3 class="name">@Profile.Name</h3>
+                        <p class="text">@Profile.Headline</p>
+                        @if (!string.IsNullOrWhiteSpace(Profile.VideoUrl))
+                        {
+                        <div class="iknow_tm_video">
+                            <div class="video_inner">
+                                <div class="circle"></div>
+                                <h3 class="play">@Profile.VideoLabel</h3>
+                                <a class="iknow_tm_full_link popup-youtube" data-enhance-nav="false" href="@Profile.VideoUrl"></a>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                    <div class="right">
+                        <div class="image">
+                            <img src="@Profile.HeroThumb" alt="" />
+                            <div class="main" data-img-url="@Profile.HeroImage"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_menu">
+                    <ul>
+                        @foreach (var item in Profile.Menu)
+                        {
+                            <li>
+                                <img class="svg" src="@item.Icon" alt="" />
+                                <span>@item.Label</span>
+                                <a class="iknow_tm_full_link" data-enhance-nav="false" href="@item.Target"></a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="simple_shapes">
+        @foreach (var shape in Profile.Shapes)
+        {
+            <span class="@shape.CssClass"><img class="svg" src="@shape.Icon" alt="" /></span>
+        }
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public ResumeProfile Profile { get; set; } = default!;
+}

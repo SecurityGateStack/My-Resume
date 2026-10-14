@@ -1,0 +1,16 @@
+@using MyRezome.Models
+
+<div class="iknow_tm_copyright hidden">
+    <div class="container">
+        <div class="inner">
+            <div class="left">
+                <p>@Profile.Name</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public ResumeProfile Profile { get; set; } = default!;
+}
