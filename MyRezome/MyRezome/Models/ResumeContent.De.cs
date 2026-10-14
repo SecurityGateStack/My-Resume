@@ -59,8 +59,8 @@ public static partial class ResumeContent
             Headline = "Full-Stack-Entwickler. Ich liefere Oberfläche und API, wohnhaft in Täbris",
             AboutEyebrow = "Über mich",
             AboutTitle = "Full-Stack-Entwickler",
-            AboutLead = "Ich führe ein Produkt von der Oberfläche über die API bis zur Datenbank.",
-            AboutBody = "Mein Schwerpunkt ist Full-Stack-Entwicklung, auf beiden Seiten. Oberflächen baue ich mit JavaScript und Frameworks wie Angular, React und Vue, Dienste mit C# und ASP.NET Core, einschließlich Web API und MVC. Mit Python und Go bin ich ebenfalls vertraut. Daten modelliere ich in SQL Server, MongoDB kenne ich, und für die lokale Entwicklung nutze ich Docker.",
+            AboutLead = "Ich baue das Webprodukt, das ein Unternehmen ausliefern kann: von der Anforderung bis zur fertigen Version.",
+            AboutBody = "Holen Sie mich dazu, wenn ein Projekt sowohl die Oberfläche als auch den Dienst dahinter braucht. Die Oberfläche setze ich mit JavaScript und Angular, React oder Vue um, den Dienst mit C# und ASP.NET Core, einschließlich Web API. Die Daten modelliere ich in SQL Server, und Authentifizierung, Autorisierung und Validierung gehören von Anfang an dazu. Mit Python, Go, Docker, MongoDB und Web-Penetrationstests auf Arbeitsniveau bin ich vertraut, einschließlich der häufigen Punkte der OWASP Top 10. Eine Funktion oder ein ganzes Produkt führe ich vom vereinbarten Umfang bis zur Übergabe, gemeinsam mit Ihrem Team.",
             HeroImage = "img/hero/farhad.jpg",
             HeroThumb = "img/thumbs/47-60.jpg",
             AboutImage = "img/hero/farhad.jpg",
@@ -87,7 +87,7 @@ public static partial class ResumeContent
             Facts =
             [
                 new("Name", "Farhad Hosseinzadeh"),
-                new("Geboren", "1371/6/6"),
+                new("Geboren", "22. September 1997"),
                 new("E-Mail", "webspacesexplorer@outlook.com"),
                 new("Telefon", "+98 936 278 0737"),
                 new("Adresse", "Ost-Aserbaidschan, Täbris"),
@@ -96,7 +96,7 @@ public static partial class ResumeContent
             ],
             Education =
             [
-                new("Bachelor, Softwaretechnik", "Payame-Noor-Universität", "1390 – 1393", "Ost-Aserbaidschan, Täbris.")
+                new("Bachelor, Softwaretechnik", "Payame-Noor-Universität", "1393 – 1396", "Ost-Aserbaidschan, Täbris.")
             ],
             Experience =
             [
@@ -122,7 +122,8 @@ public static partial class ResumeContent
                 new("JavaScript", "0.75"),
                 new("SQL Server", "0.85"),
                 new("Python", "0.45"),
-                new("Go", "0.45")
+                new("Go", "0.45"),
+                new("Sicherheit", "0.45")
             ],
             Portfolio =
             [
@@ -143,7 +144,8 @@ public static partial class ResumeContent
                 new("Datenbanken", "img/svg/web.svg", "SQL Server für Entwurf und Abfragen, dazu ein Einstieg in MongoDB.", "img/service/3.jpg", ["SQL Server: sicher im Entwurf und beim Schreiben von Abfragen.", "MongoDB: erste Arbeit mit NoSQL."]),
                 new("Frontend", "img/svg/user.svg", "Oberflächen mit JavaScript, Angular, React und Vue.", "img/service/4.jpg", ["JavaScript und TypeScript.", "Umsetzung der Oberfläche mit Angular, React und Vue.", "Bootstrap, Tailwind, MUI und Ant Design."]),
                 new("Architektur", "img/svg/briefcase.svg", "Microservices, serviceorientiertes Design und lokales Docker.", "img/service/5.jpg", ["Vertraut mit Microservices und serviceorientierter Architektur.", "Docker für lokale Entwicklung und Tests.", "Postman sowie Git mit GitHub und GitLab."]),
-                new("Oberfläche", "img/svg/writing_2.svg", "Figma, um einen Entwurf zu lesen und die UI-Anforderungen zu entnehmen.", "img/service/6.jpg", ["Figma im Umfang von Sichten und Ableiten der UI- und UX-Anforderungen."])
+                new("Oberfläche", "img/svg/writing_2.svg", "Figma, um einen Entwurf zu lesen und die UI-Anforderungen zu entnehmen.", "img/service/6.jpg", ["Figma im Umfang von Sichten und Ableiten der UI- und UX-Anforderungen."]),
+                new("Anwendungssicherheit", "img/svg/gear.svg", "Sicherheit im Projekt, dazu ein allgemeines Verständnis von Web-Penetrationstests.", "img/service/2.jpg", ["Authentifizierung, Autorisierung und Eingabevalidierung an API und Oberfläche.", "Sichererer Umgang mit Geheimnissen, Konfiguration, HTTPS und Abhängigkeiten.", "Vertraut mit der OWASP Top 10 und mit der Prüfung einer Webanwendung auf häufige Schwachstellen.", "Penetrationstest auf allgemeiner Ebene: Umfang festlegen, die Anwendung prüfen und einen klaren Befundbericht schreiben."])
             ],
             Testimonials = [],
             News = [],

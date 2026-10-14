@@ -59,8 +59,8 @@ public static partial class ResumeContent
             Headline = "توسعه‌دهنده فول‌استک؛ فرانت‌اند و بک‌اند را با هم تحویل می‌دهم. مقیم تبریز",
             AboutEyebrow = "درباره من",
             AboutTitle = "توسعه‌دهنده فول‌استک",
-            AboutLead = "از رابط کاربری تا API و پایگاه داده، محصول را یکپارچه پیش می‌برم.",
-            AboutBody = "تخصص اصلی‌ام توسعه فول‌استک است. فرانت‌اند را با JavaScript و فریم‌ورک‌هایی مانند Angular، React و Vue می‌سازم و بک‌اند را با C# و ASP.NET Core، شامل Web API و MVC. با Python و Go هم آشنا هستم. داده را در SQL Server طراحی می‌کنم، با MongoDB آشنایم و برای توسعه محلی از Docker استفاده می‌کنم.",
+            AboutLead = "محصول وب را از نیاز شرکت تا نسخه‌ای که بشود به مشتری داد، یکجا می‌سازم.",
+            AboutBody = "وقتی پروژه‌ای هم به رابط کاربری نیاز دارد و هم به سرویس پشت آن، هر دو را با هم پیش می‌برم. فرانت‌اند را با JavaScript و Angular، React یا Vue می‌سازم و بک‌اند را با C# و ASP.NET Core، شامل Web API. داده را در SQL Server طراحی می‌کنم و احراز هویت، مجوزدهی و اعتبارسنجی را از همان اول در کار می‌گذارم. با Python، Go، Docker، MongoDB و تست نفوذ وب در سطح کاربردی آشنا هستم، از جمله ضعف‌های رایج OWASP Top 10. می‌توانم یک قابلیت یا یک محصول کامل را، از توافق روی محدوده تا تحویل، کنار تیم شما جلو ببرم.",
             HeroImage = "img/hero/farhad.jpg",
             HeroThumb = "img/thumbs/47-60.jpg",
             AboutImage = "img/hero/farhad.jpg",
@@ -87,7 +87,7 @@ public static partial class ResumeContent
             Facts =
             [
                 new("نام", "فرهاد حسین‌زاده"),
-                new("تولد", "۱۳۷۱/۶/۶"),
+                new("تولد", "۱۳۷۶/۰۶/۳۱"),
                 new("ایمیل", "webspacesexplorer@outlook.com"),
                 new("تلفن", "+98 936 278 0737"),
                 new("نشانی", "آذربایجان شرقی، تبریز"),
@@ -96,7 +96,7 @@ public static partial class ResumeContent
             ],
             Education =
             [
-                new("کارشناسی مهندسی نرم‌افزار", "دانشگاه پیام نور", "۱۳۹۰ تا ۱۳۹۳", "آذربایجان شرقی، تبریز.")
+                new("کارشناسی مهندسی نرم‌افزار", "دانشگاه پیام نور", "۱۳۹۳ تا ۱۳۹۶", "آذربایجان شرقی، تبریز.")
             ],
             Experience =
             [
@@ -122,7 +122,8 @@ public static partial class ResumeContent
                 new("JavaScript", "0.75"),
                 new("SQL Server", "0.85"),
                 new("Python", "0.45"),
-                new("Go", "0.45")
+                new("Go", "0.45"),
+                new("امنیت", "0.45")
             ],
             Portfolio =
             [
@@ -143,7 +144,8 @@ public static partial class ResumeContent
                 new("پایگاه داده", "img/svg/web.svg", "SQL Server برای طراحی و کوئری، و آشنایی با MongoDB.", "img/service/3.jpg", ["SQL Server: مسلط به طراحی و کوئری‌نویسی.", "MongoDB: آشنایی و کار اولیه با NoSQL."]),
                 new("فرانت‌اند", "img/svg/user.svg", "رابط کاربری با JavaScript، Angular، React و Vue.", "img/service/4.jpg", ["JavaScript و TypeScript.", "پیاده‌سازی رابط با Angular، React و Vue.", "Bootstrap، Tailwind، MUI و Ant Design."]),
                 new("معماری", "img/svg/briefcase.svg", "میکروسرویس، طراحی سرویس‌محور و Docker محلی.", "img/service/5.jpg", ["آشنا با میکروسرویس و معماری سرویس‌محور.", "Docker برای توسعه و تست محلی.", "Postman و Git برای GitHub و GitLab."]),
-                new("رابط کاربری", "img/svg/writing_2.svg", "Figma در حد دیدن طرح و استخراج نیازمندی‌های رابط.", "img/service/6.jpg", ["Figma در حد مشاهده و استخراج نیازمندی‌های UI و UX."])
+                new("رابط کاربری", "img/svg/writing_2.svg", "Figma در حد دیدن طرح و استخراج نیازمندی‌های رابط.", "img/service/6.jpg", ["Figma در حد مشاهده و استخراج نیازمندی‌های UI و UX."]),
+                new("امنیت نرم‌افزار", "img/svg/gear.svg", "پیاده‌سازی امنیت در پروژه، و آشنایی کلی با تست نفوذ وب.", "img/service/2.jpg", ["احراز هویت، مجوزدهی و اعتبارسنجی ورودی در API و رابط کاربری.", "نگهداری امن‌تر رازها، پیکربندی، HTTPS و وابستگی‌ها.", "آشنا با OWASP Top 10 و بررسی وب‌اپلیکیشن برای ضعف‌های رایج.", "تست نفوذ در سطح کلی: توافق روی محدوده، بررسی برنامه و نوشتن گزارش یافته‌ها."])
             ],
             Testimonials = [],
             News = [],
