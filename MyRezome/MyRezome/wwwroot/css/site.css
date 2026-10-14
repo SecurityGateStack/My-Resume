@@ -343,7 +343,9 @@ html[lang="fa"] .iknow_tm_hero .name {
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    min-width: 0;
     gap: 10px;
 }
 
@@ -723,6 +725,78 @@ html[dir="rtl"] .iknow_tm_portfolio .portfolio_filter {
 
     .plain-page {
         padding: 1.25rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .iknow_tm_topbar {
+        position: relative;
+        display: flow-root;
+    }
+
+    .iknow_tm_topbar .topbar_inner {
+        float: none;
+        align-items: flex-start;
+    }
+
+    .iknow_tm_topbar .right {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .iknow_tm_hero .content_inner .main_info {
+        padding-top: 16px;
+        min-height: 0;
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .iknow_tm_hero .left,
+    .iknow_tm_hero .right,
+    html[dir="rtl"] .iknow_tm_hero .right {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        align-self: auto;
+    }
+
+    .iknow_tm_hero .right,
+    html[dir="rtl"] .iknow_tm_hero .right {
+        margin-top: 28px;
+    }
+
+    .iknow_tm_hero .left {
+        margin-top: 28px;
+    }
+
+    .iknow_tm_hero .right .image,
+    .iknow_tm_hero .right .image img {
+        max-height: min(48vh, 460px);
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .iknow_tm_about .right .iknow_tm_button {
+        float: none;
+        width: auto;
+        margin: 8px 0 32px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1560px;
+    }
+}
+
+@media (max-width: 900px) {
+    .iknow_tm_portfolio .portfolio_list ul li,
+    .iknow_tm_services .service_list ul li,
+    .iknow_tm_news .news_list ul li,
+    .iknow_tm_contact .wrapper .right .input_list ul li {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
