@@ -106,5 +106,44 @@
             }
             return false;
         });
+
+        $(".contract_form #upload_contract").off("click").on("click", function () {
+            var form = $(".contract_form");
+            var name = $.trim(form.find("#contract_name").val());
+            var email = $.trim(form.find("#contract_email").val());
+            var fileInput = form.find("#contract_file")[0];
+            var file = fileInput && fileInput.files ? fileInput.files[0] : null;
+            var success = form.find(".returnmessage").data("success");
+            var culture = document.documentElement.lang || "en";
+
+            form.find(".returnmessage").empty();
+            if (name === "" || email === "" || !file) {
+                form.find("div.empty_notice").slideDown(500).delay(2000).slideUp(500);
+            } else {
+                var data = new FormData();
+                data.append("party_name", name);
+                data.append("party_email", email);
+                data.append("contract_file", file);
+
+                $.ajax({
+                    url: "/resume/" + encodeURIComponent(culture) + "/contract/upload",
+                    type: "POST",
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        form.find(".returnmessage").append(response);
+                        if (form.find(".returnmessage span.contact_error").length) {
+                            form.find(".returnmessage").slideDown(500).delay(2500).slideUp(500);
+                        } else {
+                            form.find(".returnmessage").append("<span class='contact_success'>" + success + "</span>");
+                            form.find(".returnmessage").slideDown(500).delay(4000).slideUp(500);
+                            form[0].reset();
+                        }
+                    }
+                });
+            }
+            return false;
+        });
     });
 })(jQuery);

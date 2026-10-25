@@ -10,9 +10,12 @@ namespace MyRezome.Services;
 public static class ResumePdf
 {
     private static bool _fontsReady;
+    private static string _webRoot = "";
 
     public static void RegisterFonts(string webRoot)
     {
+        _webRoot = webRoot;
+
         if (_fontsReady)
         {
             return;
@@ -36,6 +39,11 @@ public static class ResumePdf
 
     public static byte[] Create(ResumeProfile profile, string accent)
     {
+        return Build(profile, accent).GeneratePdf();
+    }
+
+    private static Document Build(ResumeProfile profile, string accent)
+    {
         QuestPDF.Settings.License = LicenseType.Community;
         accent = SiteAccent.Normalize(accent);
 
@@ -53,7 +61,7 @@ public static class ResumePdf
                     directed.Column(column =>
                     {
                         column.Spacing(8);
-                        WriteHeader(column, profile, accent);
+                        WriteHeader(column, profile, accent, LoadPhoto(profile.HeroImage));
                         WriteFacts(column, profile);
                         WriteAbout(column, profile, accent);
                         WriteTimeline(column, profile.Labels.EducationTitle, profile.Education, accent);
@@ -74,18 +82,52 @@ public static class ResumePdf
                     text.TotalPages();
                 });
             });
-        }).GeneratePdf();
+        });
     }
 
-    private static void WriteHeader(ColumnDescriptor column, ResumeProfile profile, string accent)
+    private static void WriteHeader(ColumnDescriptor column, ResumeProfile profile, string accent, byte[]? photo)
     {
-        column.Item().Background(accent).Padding(16).Column(header =>
+        column.Item().Background(accent).Padding(16).Row(row =>
         {
-            header.Spacing(4);
-            header.Item().Text(profile.Greeting).FontSize(11).FontColor("#ffffff");
-            header.Item().Text(profile.Name).FontSize(22).Bold().FontColor("#ffffff");
-            header.Item().Text(profile.Headline).FontSize(11).FontColor("#ffffff");
+            if (photo is { Length: > 0 })
+            {
+                row.ConstantItem(96).AlignMiddle().Element(frame =>
+                {
+                    frame.Width(92).Height(92)
+                        .Border(3)
+                        .BorderColor("#ffffff")
+                        .Background("#ffffff")
+                        .Image(photo)
+                        .FitUnproportionally();
+                });
+                row.ConstantItem(16);
+            }
+
+            row.RelativeItem().AlignMiddle().Column(header =>
+            {
+                header.Spacing(4);
+                header.Item().Text(profile.Greeting).FontSize(11).FontColor("#ffffff");
+                header.Item().Text(profile.Name).FontSize(20).Bold().FontColor("#ffffff");
+                header.Item().Text(profile.Headline).FontSize(10).FontColor("#ffffff");
+            });
         });
+    }
+
+    private static byte[]? LoadPhoto(string relativePath)
+    {
+        if (string.IsNullOrWhiteSpace(_webRoot) || string.IsNullOrWhiteSpace(relativePath))
+        {
+            return null;
+        }
+
+        var root = Path.GetFullPath(_webRoot);
+        var path = Path.GetFullPath(Path.Combine(root, relativePath.Replace('/', Path.DirectorySeparatorChar)));
+        if (!path.StartsWith(root, StringComparison.OrdinalIgnoreCase) || !File.Exists(path))
+        {
+            return null;
+        }
+
+        return File.ReadAllBytes(path);
     }
 
     private static void WriteFacts(ColumnDescriptor column, ResumeProfile profile)
@@ -100,7 +142,7 @@ public static class ResumePdf
 
             foreach (var fact in profile.Facts)
             {
-                table.Cell().PaddingBottom(6).PaddingRight(8).Column(cell =>
+                table.Cell().MinWidth(0).PaddingBottom(6).PaddingHorizontal(6).Column(cell =>
                 {
                     cell.Item().Text(fact.Label).FontSize(8).FontColor("#777777");
                     cell.Item().Element(value => WriteValue(value, fact.Value, profile.RightToLeft));
@@ -249,10 +291,13 @@ public static class ResumePdf
 
     private static void WriteValue(IContainer container, string value, bool rightToLeft)
     {
-        var target = rightToLeft && SiteCulture.KeepLtr(value)
-            ? container.ContentFromLeftToRight()
-            : container;
-        target.Text(value);
+        if (rightToLeft && SiteCulture.KeepLtr(value))
+        {
+            container.AlignRight().ContentFromLeftToRight().Text("\u2066" + value + "\u2069");
+            return;
+        }
+
+        container.Text(value);
     }
 
     private static string Percent(string value)

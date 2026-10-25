@@ -56,7 +56,7 @@ public static partial class ResumeContent
                 Website: "Website"),
             Name = "Farhad Hosseinzadeh",
             Greeting = "Full-Stack",
-            Headline = "Full-Stack-Entwickler. Ich liefere Oberfläche und API, wohnhaft in Täbris",
+            Headline = "Ich baue das Webprodukt, das Unternehmen ausliefern können: von der Oberfläche bis zur API. Täbris",
             AboutEyebrow = "Über mich",
             AboutTitle = "Full-Stack-Entwickler",
             AboutLead = "Ich baue das Webprodukt, das ein Unternehmen ausliefern kann: von der Anforderung bis zur fertigen Version.",
@@ -82,6 +82,7 @@ public static partial class ResumeContent
                 new("img/svg/contacs.svg", "Lebenslauf", "#resume"),
                 new("img/svg/briefcase.svg", "Projekte", "#portfolio"),
                 new("img/svg/gear.svg", "Kenntnisse", "#service"),
+                new("img/svg/writing.svg", "Vertrag", "#contract"),
                 new("img/svg/letter.svg", "Kontakt", "#contact")
             ],
             Facts =
@@ -89,7 +90,9 @@ public static partial class ResumeContent
                 new("Name", "Farhad Hosseinzadeh"),
                 new("Geboren", "22. September 1997"),
                 new("E-Mail", "webspacesexplorer@outlook.com"),
-                new("Telefon", "+98 936 278 0737"),
+                new("E-Mail", "fstar.hz81@gmail.com"),
+                new("Telefon", "09227820737"),
+                new("Telefon", "09026287236"),
                 new("Adresse", "Ost-Aserbaidschan, Täbris"),
                 new("Familienstand", "Verheiratet"),
                 new("Wehrdienst", "Abgeleistet")
@@ -128,14 +131,15 @@ public static partial class ResumeContent
             Portfolio =
             [
                 Project("health", "Gesundheit", "Ärztekammer-System", "img/portfolio/p1.jpg", "System, über das Nutzer Beschwerden über Kliniken und Ärzte einreichen.", "Eliagostar und Fanavaran Ettelaat Setak", "Gesundheit", "—", null),
-                Project("health", "Gesundheit", "Nobatall", "img/portfolio/p2.jpg", "Terminvergabe und Reservierung für Ärzte.", "Nobatall", "Gesundheit", "—", "https://nobatall.com"),
-                Project("web", "Web", "Rinotex", "img/portfolio/p3.jpg", "Seite der 11. Innovations- und Technologiemesse Rabe Raschidi.", "Fanavaran Ettelaat Setak", "Messe", "—", "https://rinotex.ir"),
-                Project("web", "Web", "Ideh Gostar", "img/portfolio/p4.jpg", "Veranstalter führender Weiterbildungskurse im ganzen Land.", "Fanavaran Ettelaat Setak", "Bildung", "—", "https://ide-ac.ir"),
+                Project("health", "Gesundheit", "Nobatall", "img/portfolio/Nobatall.png", "Terminvergabe und Reservierung für Ärzte.", "Nobatall", "Gesundheit", "—", "https://nobatall.com"),
+                Project("web", "Web", "Rinotex", "img/portfolio/Rinitex.png", "Seite der 11. Innovations- und Technologiemesse Rabe Raschidi.", "Fanavaran Ettelaat Setak", "Messe", "—", "https://rinotex.ir"),
+                Project("web", "Web", "Ideh Gostar", "img/portfolio/Idegostar.png", "Veranstalter führender Weiterbildungskurse im ganzen Land.", "Fanavaran Ettelaat Setak", "Bildung", "—", "https://ide-ac.ir"),
+                Project("web", "Web", "Ausbildungszentrum Sepehr", "img/portfolio/sepehr.png", "Schulungsplattform für Luftfahrt und Kabinenpersonal, mit Anmeldung, Kursen, Dozenten und Zertifikaten.", "Ausbildungszentrum Sepehr", "Bildung", "—", "http://sepehr-cert.ir"),
                 Project("web", "Web", "Pooshesh Omran", "img/portfolio/p5.jpg", "Chemieindustrie Pooshesh Omran.", "Fanavaran Ettelaat Setak", "Industrie", "—", "https://poschemical.com"),
-                Project("fleet", "Verkehr", "UTCMS", "img/portfolio/p6.jpg", "Verwaltungssystem für städtischen und stadtnahen Verkehr, entwickelt mit C# und JavaScript.", "Rahyaft Dadeh Pardaz Arka", "Verkehr", "—", "https://utcms.ir"),
-                Project("fleet", "Verkehr", "Nationale Flottenortung", "img/portfolio/p7.jpg", "Nationales Programm zur Ausstattung von Güter- und Personenflotten mit einem Ortungssystem, entwickelt mit C# und JavaScript.", "Rahyaft Dadeh Pardaz Arka", "Verkehr", "—", "https://sipaad.ir"),
-                Project("fleet", "Verkehr", "Reifen und Motoröl", "img/portfolio/p8.jpg", "Reservierung von Reifen und Motoröl für Halter schwerer und mittelschwerer Flotten. Entwickelt mit C# und JavaScript.", "Rahyaft Dadeh Pardaz Arka", "Verkehr", "—", "https://kalaa.ntsw.ir"),
-                Project("health", "Gesundheit", "Shafadoc", "img/portfolio/p9.jpg", "Online-Terminvergabe für Ärzte.", "Entwicklungs- und IT-Netz Aftab Shafa", "Gesundheit", "Farvardin 1404", "http://shafadoc.ir")
+                Project("fleet", "Verkehr", "UTCMS", "img/portfolio/UTCMS.png", "Verwaltungssystem für städtischen und stadtnahen Verkehr, entwickelt mit C# und JavaScript.", "Rahyaft Dadeh Pardaz Arka", "Verkehr", "—", "https://utcms.ir"),
+                Project("fleet", "Verkehr", "Nationale Flottenortung", "img/portfolio/sipaad.png", "Nationales Programm zur Ausstattung von Güter- und Personenflotten mit einem Ortungssystem, entwickelt mit C# und JavaScript.", "Rahyaft Dadeh Pardaz Arka", "Verkehr", "—", "https://sipaad.ir"),
+                Project("fleet", "Verkehr", "Reifen und Motoröl", "img/portfolio/kalantsw.png", "Reservierung von Reifen und Motoröl für Halter schwerer und mittelschwerer Flotten. Entwickelt mit C# und JavaScript.", "Rahyaft Dadeh Pardaz Arka", "Verkehr", "—", "https://kalaa.ntsw.ir"),
+                Project("health", "Gesundheit", "Shafadoc", "img/portfolio/shafadoc.png", "Online-Terminvergabe für Ärzte.", "Entwicklungs- und IT-Netz Aftab Shafa", "Gesundheit", "Farvardin 1404", "http://shafadoc.ir")
             ],
             Services =
             [
@@ -147,12 +151,15 @@ public static partial class ResumeContent
                 new("Oberfläche", "img/svg/writing_2.svg", "Figma, um einen Entwurf zu lesen und die UI-Anforderungen zu entnehmen.", "img/service/6.jpg", ["Figma im Umfang von Sichten und Ableiten der UI- und UX-Anforderungen."]),
                 new("Anwendungssicherheit", "img/svg/gear.svg", "Sicherheit im Projekt, dazu ein allgemeines Verständnis von Web-Penetrationstests.", "img/service/2.jpg", ["Authentifizierung, Autorisierung und Eingabevalidierung an API und Oberfläche.", "Sichererer Umgang mit Geheimnissen, Konfiguration, HTTPS und Abhängigkeiten.", "Vertraut mit der OWASP Top 10 und mit der Prüfung einer Webanwendung auf häufige Schwachstellen.", "Penetrationstest auf allgemeiner Ebene: Umfang festlegen, die Anwendung prüfen und einen klaren Befundbericht schreiben."])
             ],
+            Contract = ResumeContract.German,
             Testimonials = [],
             News = [],
             Channels =
             [
-                new("img/svg/smartphone.svg", "Telefon", "+98 936 278 0737", "tel:+989362780737"),
+                new("img/svg/smartphone.svg", "Telefon", "09227820737", "tel:+989227820737"),
+                new("img/svg/smartphone.svg", "Telefon", "09026287236", "tel:+989026287236"),
                 new("img/svg/letter.svg", "E-Mail", "webspacesexplorer@outlook.com", "mailto:webspacesexplorer@outlook.com"),
+                new("img/svg/letter.svg", "E-Mail", "fstar.hz81@gmail.com", "mailto:fstar.hz81@gmail.com"),
                 new("img/svg/placeholder.svg", "Adresse", "Ost-Aserbaidschan, Täbris", null)
             ],
             Shapes = English.Shapes
