@@ -43,6 +43,25 @@ public sealed record NewsPost(string Category, string Title, string Image, IRead
 
 public sealed record ContactChannel(string Icon, string Title, string Value, string? Url);
 
+public sealed record ContractClause(string Title, string Body);
+
+public sealed record ContractContent(
+    string Eyebrow,
+    string Title,
+    string Lead,
+    string Body,
+    string Download,
+    string Upload,
+    string NamePlaceholder,
+    string EmailPlaceholder,
+    string FileLabel,
+    string UploadHint,
+    string Success,
+    string Error,
+    string FileTypeError,
+    string Disclaimer,
+    IReadOnlyList<ContractClause> Clauses);
+
 public sealed record HeroShape(string CssClass, string Icon);
 
 public sealed record ResumeLabels(
@@ -189,6 +208,7 @@ public sealed class ResumeProfile
     public required IReadOnlyList<CircularSkill> SoftwareSkills { get; init; }
     public required IReadOnlyList<PortfolioItem> Portfolio { get; init; }
     public required IReadOnlyList<ServiceItem> Services { get; init; }
+    public required ContractContent Contract { get; init; }
     public required IReadOnlyList<Testimonial> Testimonials { get; init; }
     public required IReadOnlyList<NewsPost> News { get; init; }
     public required IReadOnlyList<ContactChannel> Channels { get; init; }
@@ -270,7 +290,7 @@ public static partial class ResumeContent
                 Website: "Website"),
             Name = "Farhad Hosseinzadeh",
             Greeting = "Full-stack",
-            Headline = "Full-stack developer. I ship the interface and the API, based in Tabriz",
+            Headline = "I build the web product companies can ship, from the screen to the API. Tabriz",
             AboutEyebrow = "About me",
             AboutTitle = "Full-stack developer",
             AboutLead = "I build the web product a company can hand to a customer, from the requirement to a version that ships.",
@@ -296,6 +316,7 @@ public static partial class ResumeContent
                 new("img/svg/contacs.svg", "Resume", "#resume"),
                 new("img/svg/briefcase.svg", "Projects", "#portfolio"),
                 new("img/svg/gear.svg", "Skills", "#service"),
+                new("img/svg/writing.svg", "Contract", "#contract"),
                 new("img/svg/letter.svg", "Contact", "#contact")
             ],
             Facts =
@@ -303,7 +324,9 @@ public static partial class ResumeContent
                 new("Name", "Farhad Hosseinzadeh"),
                 new("Born", "September 22, 1997"),
                 new("Email", "webspacesexplorer@outlook.com"),
-                new("Phone", "+98 936 278 0737"),
+                new("Email", "fstar.hz81@gmail.com"),
+                new("Phone", "09227820737"),
+                new("Phone", "09026287236"),
                 new("Address", "East Azerbaijan, Tabriz"),
                 new("Marital status", "Married"),
                 new("Military service", "Completed")
@@ -342,14 +365,15 @@ public static partial class ResumeContent
             Portfolio =
             [
                 Project("health", "Healthcare", "Medical council system", "img/portfolio/p1.jpg", "A system for users to file complaints about clinics and physicians.", "Eliagostar, and Fanavaran Ettelaat Setak", "Healthcare", "—", null),
-                Project("health", "Healthcare", "Nobatall", "img/portfolio/p2.jpg", "Appointment booking for physicians.", "Nobatall", "Healthcare", "—", "https://nobatall.com"),
-                Project("web", "Web", "Rinotex", "img/portfolio/p3.jpg", "Site for the 11th Rabe Rashidi innovation and technology exhibition.", "Fanavaran Ettelaat Setak", "Exhibition", "—", "https://rinotex.ir"),
-                Project("web", "Web", "Ideh Gostar", "img/portfolio/p4.jpg", "Organizer of leading vocational-training courses across the country.", "Fanavaran Ettelaat Setak", "Education", "—", "https://ide-ac.ir"),
+                Project("health", "Healthcare", "Nobatall", "img/portfolio/Nobatall.png", "Appointment booking for physicians.", "Nobatall", "Healthcare", "—", "https://nobatall.com"),
+                Project("web", "Web", "Rinotex", "img/portfolio/Rinitex.png", "Site for the 11th Rabe Rashidi innovation and technology exhibition.", "Fanavaran Ettelaat Setak", "Exhibition", "—", "https://rinotex.ir"),
+                Project("web", "Web", "Ideh Gostar", "img/portfolio/Idegostar.png", "Organizer of leading vocational-training courses across the country.", "Fanavaran Ettelaat Setak", "Education", "—", "https://ide-ac.ir"),
+                Project("web", "Web", "Sepehr Training Center", "img/portfolio/sepehr.png", "Aviation and cabin-crew training site, with enrolment, courses, instructors, and certificates.", "Sepehr Training Center", "Education", "—", "http://sepehr-cert.ir"),
                 Project("web", "Web", "Pooshesh Omran", "img/portfolio/p5.jpg", "Pooshesh Omran chemical industries.", "Fanavaran Ettelaat Setak", "Industry", "—", "https://poschemical.com"),
-                Project("fleet", "Transport", "UTCMS", "img/portfolio/p6.jpg", "Urban and suburban transport management system, built with C# and JavaScript.", "Rahyaft Dadeh Pardaz Arka", "Transport", "—", "https://utcms.ir"),
-                Project("fleet", "Transport", "National fleet tracking", "img/portfolio/p7.jpg", "National program for fitting freight and passenger fleets with a tracking system, built with C# and JavaScript.", "Rahyaft Dadeh Pardaz Arka", "Transport", "—", "https://sipaad.ir"),
-                Project("fleet", "Transport", "Tire and engine-oil desk", "img/portfolio/p8.jpg", "Reservation requests for tires and engine oil, for owners of heavy and semi-heavy fleets. Built with C# and JavaScript.", "Rahyaft Dadeh Pardaz Arka", "Transport", "—", "https://kalaa.ntsw.ir"),
-                Project("health", "Healthcare", "Shafadoc", "img/portfolio/p9.jpg", "Online appointment booking for physicians.", "Aftab Shafa development and IT network", "Healthcare", "Farvardin 1404", "http://shafadoc.ir")
+                Project("fleet", "Transport", "UTCMS", "img/portfolio/UTCMS.png", "Urban and suburban transport management system, built with C# and JavaScript.", "Rahyaft Dadeh Pardaz Arka", "Transport", "—", "https://utcms.ir"),
+                Project("fleet", "Transport", "National fleet tracking", "img/portfolio/sipaad.png", "National program for fitting freight and passenger fleets with a tracking system, built with C# and JavaScript.", "Rahyaft Dadeh Pardaz Arka", "Transport", "—", "https://sipaad.ir"),
+                Project("fleet", "Transport", "Tire and engine-oil desk", "img/portfolio/kalantsw.png", "Reservation requests for tires and engine oil, for owners of heavy and semi-heavy fleets. Built with C# and JavaScript.", "Rahyaft Dadeh Pardaz Arka", "Transport", "—", "https://kalaa.ntsw.ir"),
+                Project("health", "Healthcare", "Shafadoc", "img/portfolio/shafadoc.png", "Online appointment booking for physicians.", "Aftab Shafa development and IT network", "Healthcare", "Farvardin 1404", "http://shafadoc.ir")
             ],
             Services =
             [
@@ -361,12 +385,15 @@ public static partial class ResumeContent
                 new("Interface notes", "img/svg/writing_2.svg", "Figma, used to read a screen and pull out the UI requirements.", "img/service/6.jpg", ["Figma at the level of reviewing a file and extracting UI and UX requirements."]),
                 new("Application security", "img/svg/gear.svg", "Security built into the project, plus a working knowledge of web penetration testing.", "img/service/2.jpg", ["Authentication, authorization, and input validation on the API and the interface.", "Safer handling of secrets, configuration, HTTPS, and dependencies.", "Familiar with the OWASP Top 10 and with reviewing a web application for common weaknesses.", "Penetration testing at a general level: agree the scope, check the application, and write a clear finding report."])
             ],
+            Contract = ResumeContract.English,
             Testimonials = [],
             News = [],
             Channels =
             [
-                new("img/svg/smartphone.svg", "Phone", "+98 936 278 0737", "tel:+989362780737"),
+                new("img/svg/smartphone.svg", "Phone", "09227820737", "tel:+989227820737"),
+                new("img/svg/smartphone.svg", "Phone", "09026287236", "tel:+989026287236"),
                 new("img/svg/letter.svg", "Email", "webspacesexplorer@outlook.com", "mailto:webspacesexplorer@outlook.com"),
+                new("img/svg/letter.svg", "Email", "fstar.hz81@gmail.com", "mailto:fstar.hz81@gmail.com"),
                 new("img/svg/placeholder.svg", "Address", "East Azerbaijan, Tabriz", null)
             ],
             Shapes =

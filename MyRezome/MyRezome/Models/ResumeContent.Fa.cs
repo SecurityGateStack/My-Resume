@@ -56,7 +56,7 @@ public static partial class ResumeContent
                 Website: "وب‌سایت"),
             Name = "فرهاد حسین‌زاده",
             Greeting = "فول‌استک",
-            Headline = "توسعه‌دهنده فول‌استک؛ فرانت‌اند و بک‌اند را با هم تحویل می‌دهم. مقیم تبریز",
+            Headline = "برای شرکت‌ها، محصول وب را از صفحه تا API آماده تحویل می‌سازم. تبریز",
             AboutEyebrow = "درباره من",
             AboutTitle = "توسعه‌دهنده فول‌استک",
             AboutLead = "محصول وب را از نیاز شرکت تا نسخه‌ای که بشود به مشتری داد، یکجا می‌سازم.",
@@ -82,6 +82,7 @@ public static partial class ResumeContent
                 new("img/svg/contacs.svg", "رزومه", "#resume"),
                 new("img/svg/briefcase.svg", "پروژه‌ها", "#portfolio"),
                 new("img/svg/gear.svg", "مهارت‌ها", "#service"),
+                new("img/svg/writing.svg", "قرارداد", "#contract"),
                 new("img/svg/letter.svg", "تماس", "#contact")
             ],
             Facts =
@@ -89,7 +90,9 @@ public static partial class ResumeContent
                 new("نام", "فرهاد حسین‌زاده"),
                 new("تولد", "۱۳۷۶/۰۶/۳۱"),
                 new("ایمیل", "webspacesexplorer@outlook.com"),
-                new("تلفن", "+98 936 278 0737"),
+                new("ایمیل", "fstar.hz81@gmail.com"),
+                new("تلفن", "09227820737"),
+                new("تلفن", "09026287236"),
                 new("نشانی", "آذربایجان شرقی، تبریز"),
                 new("وضعیت تأهل", "متأهل"),
                 new("وضعیت سربازی", "پایان خدمت")
@@ -128,14 +131,15 @@ public static partial class ResumeContent
             Portfolio =
             [
                 Project("health", "درمان", "نظام پزشکی", "img/portfolio/p1.jpg", "سامانه ثبت شکایت کاربران از مراکز درمانی و پزشکان.", "شرکت الیاگستر و فناوران اطلاعات و ارتباطات ستاک", "درمان", "—", null),
-                Project("health", "درمان", "نوبت‌ال", "img/portfolio/p2.jpg", "نوبت‌دهی و رزرو وقت برای پزشکان.", "نوبت‌ال", "درمان", "—", "https://nobatall.com"),
-                Project("web", "وب", "رینوتکس", "img/portfolio/p3.jpg", "یازدهمین نمایشگاه نوآوری و فناوری ربع رشیدی.", "فناوران اطلاعات و ارتباطات ستاک", "نمایشگاه", "—", "https://rinotex.ir"),
-                Project("web", "وب", "ایده‌گستر", "img/portfolio/p4.jpg", "مجری برگزاری دوره‌های آموزشی در حوزه مهارت‌آموزی در سراسر کشور.", "فناوران اطلاعات و ارتباطات ستاک", "آموزش", "—", "https://ide-ac.ir"),
+                Project("health", "درمان", "نوبت‌ال", "img/portfolio/Nobatall.png", "نوبت‌دهی و رزرو وقت برای پزشکان.", "نوبت‌ال", "درمان", "—", "https://nobatall.com"),
+                Project("web", "وب", "رینوتکس", "img/portfolio/Rinitex.png", "یازدهمین نمایشگاه نوآوری و فناوری ربع رشیدی.", "فناوران اطلاعات و ارتباطات ستاک", "نمایشگاه", "—", "https://rinotex.ir"),
+                Project("web", "وب", "ایده‌گستر", "img/portfolio/Idegostar.png", "مجری برگزاری دوره‌های آموزشی در حوزه مهارت‌آموزی در سراسر کشور.", "فناوران اطلاعات و ارتباطات ستاک", "آموزش", "—", "https://ide-ac.ir"),
+                Project("web", "وب", "مرکز آموزش سپهر", "img/portfolio/sepehr.png", "سامانه آموزش هوانوردی و مهمانداری با ثبت‌نام، دوره‌ها، اساتید و صدور گواهی.", "مرکز آموزش سپهر", "آموزش", "—", "http://sepehr-cert.ir"),
                 Project("web", "وب", "پوشش عمران", "img/portfolio/p5.jpg", "صنایع شیمی پوشش عمران.", "فناوران اطلاعات و ارتباطات ستاک", "صنعت", "—", "https://poschemical.com"),
-                Project("fleet", "حمل‌ونقل", "سامانه ملی UTCMS", "img/portfolio/p6.jpg", "سامانه مدیریت حمل‌ونقل درون‌شهری و حومه‌ای که با C# و JavaScript توسعه داده شده است.", "رهیافت داده پرداز آرکا", "حمل‌ونقل", "—", "https://utcms.ir"),
-                Project("fleet", "حمل‌ونقل", "سامانه پیمایش ناوگان", "img/portfolio/p7.jpg", "طرح ملی تجهیز ناوگان حمل‌ونقل بار و مسافر به سامانه پیمایش، توسعه‌داده‌شده با C# و JavaScript.", "رهیافت داده پرداز آرکا", "حمل‌ونقل", "—", "https://sipaad.ir"),
-                Project("fleet", "حمل‌ونقل", "تایر و روغن موتور", "img/portfolio/p8.jpg", "ثبت درخواست رزرو تایر و روغن موتور برای دارندگان ناوگان سنگین و نیمه‌سنگین. توسعه‌داده‌شده با C# و JavaScript.", "رهیافت داده پرداز آرکا", "حمل‌ونقل", "—", "https://kalaa.ntsw.ir"),
-                Project("health", "درمان", "شفاداک", "img/portfolio/p9.jpg", "نوبت‌دهی آنلاین برای پزشکان.", "شبکه توسعه و فناوری اطلاعات آفتاب شفا", "درمان", "فروردین ۱۴۰۴", "http://shafadoc.ir")
+                Project("fleet", "حمل‌ونقل", "سامانه ملی UTCMS", "img/portfolio/UTCMS.png", "سامانه مدیریت حمل‌ونقل درون‌شهری و حومه‌ای که با C# و JavaScript توسعه داده شده است.", "رهیافت داده پرداز آرکا", "حمل‌ونقل", "—", "https://utcms.ir"),
+                Project("fleet", "حمل‌ونقل", "سامانه پیمایش ناوگان", "img/portfolio/sipaad.png", "طرح ملی تجهیز ناوگان حمل‌ونقل بار و مسافر به سامانه پیمایش، توسعه‌داده‌شده با C# و JavaScript.", "رهیافت داده پرداز آرکا", "حمل‌ونقل", "—", "https://sipaad.ir"),
+                Project("fleet", "حمل‌ونقل", "تایر و روغن موتور", "img/portfolio/kalantsw.png", "ثبت درخواست رزرو تایر و روغن موتور برای دارندگان ناوگان سنگین و نیمه‌سنگین. توسعه‌داده‌شده با C# و JavaScript.", "رهیافت داده پرداز آرکا", "حمل‌ونقل", "—", "https://kalaa.ntsw.ir"),
+                Project("health", "درمان", "شفاداک", "img/portfolio/shafadoc.png", "نوبت‌دهی آنلاین برای پزشکان.", "شبکه توسعه و فناوری اطلاعات آفتاب شفا", "درمان", "فروردین ۱۴۰۴", "http://shafadoc.ir")
             ],
             Services =
             [
@@ -147,12 +151,15 @@ public static partial class ResumeContent
                 new("رابط کاربری", "img/svg/writing_2.svg", "Figma در حد دیدن طرح و استخراج نیازمندی‌های رابط.", "img/service/6.jpg", ["Figma در حد مشاهده و استخراج نیازمندی‌های UI و UX."]),
                 new("امنیت نرم‌افزار", "img/svg/gear.svg", "پیاده‌سازی امنیت در پروژه، و آشنایی کلی با تست نفوذ وب.", "img/service/2.jpg", ["احراز هویت، مجوزدهی و اعتبارسنجی ورودی در API و رابط کاربری.", "نگهداری امن‌تر رازها، پیکربندی، HTTPS و وابستگی‌ها.", "آشنا با OWASP Top 10 و بررسی وب‌اپلیکیشن برای ضعف‌های رایج.", "تست نفوذ در سطح کلی: توافق روی محدوده، بررسی برنامه و نوشتن گزارش یافته‌ها."])
             ],
+            Contract = ResumeContract.Persian,
             Testimonials = [],
             News = [],
             Channels =
             [
-                new("img/svg/smartphone.svg", "تلفن", "+98 936 278 0737", "tel:+989362780737"),
+                new("img/svg/smartphone.svg", "تلفن", "09227820737", "tel:+989227820737"),
+                new("img/svg/smartphone.svg", "تلفن", "09026287236", "tel:+989026287236"),
                 new("img/svg/letter.svg", "ایمیل", "webspacesexplorer@outlook.com", "mailto:webspacesexplorer@outlook.com"),
+                new("img/svg/letter.svg", "ایمیل", "fstar.hz81@gmail.com", "mailto:fstar.hz81@gmail.com"),
                 new("img/svg/placeholder.svg", "نشانی", "آذربایجان شرقی، تبریز", null)
             ],
             Shapes = English.Shapes

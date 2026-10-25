@@ -1,0 +1,50 @@
+@using MyRezome.Models
+
+<div id="contract" class="iknow_tm_main_section">
+    <div class="iknow_tm_contract">
+        <div class="iknow_tm_main_title">
+            <span>@Profile.Contract.Eyebrow</span>
+            <h3>@Profile.Contract.Title</h3>
+        </div>
+        <p class="contract_lead">@Profile.Contract.Lead</p>
+        <p class="contract_body">@Profile.Contract.Body</p>
+        <ol class="contract_clauses">
+            @foreach (var clause in Profile.Contract.Clauses)
+            {
+                <li>
+                    <h4>@clause.Title</h4>
+                    <p>@clause.Body</p>
+                </li>
+            }
+        </ol>
+        <p class="contract_disclaimer">@Profile.Contract.Disclaimer</p>
+        <div class="contract_actions">
+            <div class="iknow_tm_button">
+                <a href="@($"/resume/{Profile.Culture}/contract.pdf")" data-enhance-nav="false">@Profile.Contract.Download</a>
+            </div>
+        </div>
+        <div class="fields contract_upload">
+            <form action="/" method="post" class="contract_form" id="contract_form" autocomplete="off" enctype="multipart/form-data">
+                <div class="returnmessage" data-success="@Profile.Contract.Success"></div>
+                <div class="empty_notice"><span>@Profile.Contract.Error</span></div>
+                <div class="input_list">
+                    <ul>
+                        <li><input id="contract_name" type="text" placeholder="@Profile.Contract.NamePlaceholder" /></li>
+                        <li><input id="contract_email" type="text" placeholder="@Profile.Contract.EmailPlaceholder" /></li>
+                    </ul>
+                </div>
+                <label class="contract_file_label" for="contract_file">@Profile.Contract.FileLabel</label>
+                <p class="contract_hint">@Profile.Contract.UploadHint</p>
+                <input id="contract_file" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+                <div class="iknow_tm_button">
+                    <a id="upload_contract" href="#" data-enhance-nav="false">@Profile.Contract.Upload</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public ResumeProfile Profile { get; set; } = default!;
+}
